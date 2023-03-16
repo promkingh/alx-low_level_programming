@@ -9,6 +9,6 @@ int main(void)
 {	/* String initialisation*/
 	char progr[] = "\"Programming is like building a multilingual puzzle\n";
 
-	puts(stderr, progr);
+	puts(progr);
 	return (0);
 }
