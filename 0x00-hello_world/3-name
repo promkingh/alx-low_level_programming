@@ -1,0 +1,2 @@
+#!/bnin/bash
+gcc $CFILE -o cisfun
