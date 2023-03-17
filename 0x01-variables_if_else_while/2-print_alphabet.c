@@ -9,15 +9,11 @@
  */
 int main(void)
 {
-	char uc, lc;
+	char lc;
 
 	for (lc = 'a'; lc <= 'z'; lc++)
 	{
 		putchar(lc);
-	}
-	for (uc = 'A'; uc <= 'Z'; uc++)
-	{
-		putchar(uc);
 	}
 	return (0);
 }
