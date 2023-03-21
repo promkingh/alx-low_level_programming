@@ -1,6 +1,7 @@
 #ifndef main
 #define main
 
+#include <stdio.h>
 #include <unistd.h>
 
 /**
