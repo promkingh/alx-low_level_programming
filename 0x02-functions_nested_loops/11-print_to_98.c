@@ -3,7 +3,7 @@
 
 /**
  * print_to_98 - print nunmbers fron n - 98
- * @num,@a,@b,@nn: variables
+ * @n: int variables
  *
  * Return: Void
  */
@@ -13,21 +13,21 @@ void print_to_98(int n)
 	int num;
 
 	/* First If condition*/
-	if (n >= 98 ) /* For +ve values less than 98*/
+	if (n >= 98)
 	{
-		for (num = n; n >= 98; n--)
+		for (num = n; num >= 98; num--)
 		{
-			printf("%d", n);
-			if (n != 98)
+			printf("%d", umn);
+			if (num != 98)
 				printf(", ");
 		}
 	}
 	else
 	{
-		for (num = n; n <= 98; n++)
+		for (num = n; num <= 98; num++)
 		{
-			printf("%d", n);
-			if (n != 98)
+			printf("%d", num);
+			if (num != 98)
 				printf(", ");
 		}
 	}
