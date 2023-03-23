@@ -23,7 +23,7 @@ int main(void)
 		t1 = t2;
 		t2 = nt;
 		nt = t1 + t2;
-		if (i != n);
+		if (i != n)
 			printf(",");
 		else
 			printf("\n");
