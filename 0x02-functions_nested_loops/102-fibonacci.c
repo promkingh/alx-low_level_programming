@@ -8,7 +8,7 @@
 
 int main(void)
 {
-	int i;
+	int i, n;
 	long int t1, t2, nt;
 
 	n = 50;
