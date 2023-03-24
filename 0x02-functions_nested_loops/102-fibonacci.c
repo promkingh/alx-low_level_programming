@@ -8,17 +8,16 @@
 
 int main(void)
 {
-	long long int n, i, t1, t2, nt;
+	int i;
+	long int t1, t2, nt;
 
 	n = 50;
-	t1 = 1;
-	t2 = 2;
-	nt = t1 + t2;
-
-	printf("%llu, %llu, ", t1, t2);
+	t1 = 0;
+	t2 = 1;
 
 	for (i = 1; i <= n; i++)
 	{
+		nt = t1 + t2;
 		printf("%llu", nt);
 		t1 = t2;
 		t2 = nt;
