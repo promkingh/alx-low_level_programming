@@ -18,7 +18,7 @@ int main(void)
 	for (i = 1; i <= n; i++)
 	{
 		nt = t1 + t2;
-		printf("%llu", nt);
+		printf("%lu", nt);
 		t1 = t2;
 		t2 = nt;
 		nt = t1 + t2;
