@@ -6,8 +6,8 @@
  */
 int main(void)
 {
-	int f, i;
-	unsigned int num = 612852475143;
+	unsigned int num,f, i;
+	num = 612852475143;
 
 	for (i = 2; i <= num; i++)
 	{
