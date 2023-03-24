@@ -6,8 +6,8 @@
  */
 int main(void)
 {
-	long long int num,f, i;
-	num = 612852475143;
+	int f, i;
+	long int num = 612852475143;
 
 	for (i = 2; i <= num; i++)
 	{
@@ -17,6 +17,6 @@ int main(void)
 			f = i;
 		}
 	}
-	printf("%d", f);
+	printf("%d\n", f);
 	return (0);
 }
