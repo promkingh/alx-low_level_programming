@@ -8,25 +8,20 @@
 
 int main(void)
 {
-	long long int n, i, t1, t2, nt;
+	int i;
+	long int fib[50];
 
-	n = 50;
-	t1 = 1;
-	t2 = 2;
-	nt = t1 + t2;
+	fib[0] = 1;
+	fib[1] = 2;
 
-	printf("%llu, %llu, ", t1, t2);
-
-	for (i = 1; i <= n; i++)
+	for (i = 2; i < 50; i++)
 	{
-		printf("%llu", nt);
-		t1 = t2;
-		t2 = nt;
-		nt = t1 + t2;
-		if (i != n)
-			printf(",");
-		else
-			printf("\n");
+		fib[i] = fib[i - 1] + fib[i - 2];
 	}
+	for (i = 0; i < 49; i++)
+	{
+		printf("%ld, ", fib[i]);
+	}
+	printf("%ld\n", fib[49]);
 	return (0);
 }
