@@ -8,7 +8,6 @@
 
 void print_number(int n)
 {
-	
 	unsigned int n2, n1 = n;
 	int div = 1;
 
