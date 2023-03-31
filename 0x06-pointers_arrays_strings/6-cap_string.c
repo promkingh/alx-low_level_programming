@@ -26,7 +26,8 @@ char *cap_string(char *s)
 				d++;
 				if (s[d] >= 'a' && s[d] <= 'z')
 					s[d] -= 32;
-				else
+			}
+			else
 			{
 				d++;
 				if (s[d] >= 'a' && s[d] <= 'z')
