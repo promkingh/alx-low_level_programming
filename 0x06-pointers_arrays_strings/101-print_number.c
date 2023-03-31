@@ -8,7 +8,8 @@
 
 void print_number(int n)
 {
-	int d = 1, dig;
+	int d = 1;
+	int dig;
 
 	if (n < 0)
 	{
@@ -18,10 +19,9 @@ void print_number(int n)
 	else if (n == 0)
 		_putchar('\0');
 
-	while (n >= 10)
+	while (n / d >= 10)
 	{
 		d *= 10;
-		n = n / 10;
 	}
 	while (d > 0)
 	{
