@@ -9,24 +9,17 @@
 
 char *leet(char *s)
 {
-	int i;
+	int i, j;
+	char c[] = "AaEeLlOoTt";
+	char n[] = "4433110077";
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
-		if (s[i] == 'a' || s[i] == 'A')
-			s[i] = '4';
-
-		else if (s[i] == 'e' || s[i] == 'E')
-			s[i] = '3';
-
-		else if (s[i] == 'o' || s[i] == 'O')
-			s[i] = '0';
-
-		else if (s[i] == 't' || s[i] == 'T')
-			s[i] = '7';
-
-		else if (s[i] == 'l' || s[i] == 'L')
-			s[i] = '1';
+		for (j = 0; j < 5; j++)
+		{
+			if (s[i] == c[j])
+				s[i] = n[j];
+		}
 	}
 	return (s);
 }
