@@ -14,7 +14,7 @@ char *cap_string(char *s)
 
 	for (d = 0; s[d]; d++)
 	{
-		for( e = 0; a[e]; e++)
+		for (e = 0; a[e]; e++)
 		{
 			if (d == 0)
 			{
