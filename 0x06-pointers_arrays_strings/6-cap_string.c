@@ -23,18 +23,36 @@ char *cap_string(char *s)
 			d++;
 			if (s[d] >= 'a' && s[d] <= 'z')
 				s[d] -= 32;
+			else
+			{
+				d++;
+				if (s[d] >= 'a' && s[d] <= 'z')
+					s[d] -= 32;
+			}
 		}
 		else if (s[d] == ',' || s[d] == '"' || s[d] == '?' || s[d] == '\t')
 		{
 			d++;
 			if (s[d] >= 'a' && s[d] <= 'z')
 				s[d] -= 32;
+			else
+			{
+				d++;
+				if (s[d] >= 'a' && s[d] <= 'z')
+					s[d] -= 32;
+			}
 		}
 		else if (s[d] == '(' || s[d] == ')' || s[d] == '{' || s[d] == '}')
 		{
 			d++;
 			if (s[d] >= 'a' && s[d] <= 'z')
 				s[d] -= 32;
+			else
+			{
+				d++;
+				if (s[d] >= 'a' && s[d] <= 'z')
+					s[d] -= 32;
+			}
 		}
 
 	}
