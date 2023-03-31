@@ -17,7 +17,7 @@ char *cap_string(char *s)
 		if (d == 0)
 		{
 			if (s[d] >= 'a' && s[d] <= 'z')
-				s[d] -= 32;
+				s[d] -= 'a' - 'A';
 		}
 		for (e = 0; a[e]; e++)
 		{
@@ -25,13 +25,13 @@ char *cap_string(char *s)
 			{
 				d++;
 				if (s[d] >= 'a' && s[d] <= 'z')
-					s[d] -= 32;
+					s[d] -= 'a' - 'A';
 			}
 			else
 			{
 				d++;
 				if (s[d] >= 'a' && s[d] <= 'z')
-					s[d] -= 32;
+					s[d] -= 'a' - 'A';
 			}
 		}
 	}
