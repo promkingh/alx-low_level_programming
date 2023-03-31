@@ -9,7 +9,8 @@
 
 char *cap_string(char *s)
 {
-	int d;
+	int d, e;
+	char a[] = " \t\n,;.!?\"(){}";
 
 	for (d = 0; s[d] != '\0'; d++)
 	{
@@ -18,44 +19,20 @@ char *cap_string(char *s)
 			if (s[d] >= 'a' && s[d] <= 'z')
 				s[d] -= 32;
 		}
-		if (s[d] == ' ' || s[d] == '.' || s[d] == '!' || s[d] == '\n' || s[d] == ';')
+		for (e = 0; a[e]; e++)
 		{
-			d++;
-			if (s[d] >= 'a' && s[d] <= 'z')
-				s[d] -= 32;
-			else
+			if (s[d] == a[e])
+			{
+				d++;
+				if (s[d] >= 'a' && s[d] <= 'z')
+					s[d] -= 32;
+				else
 			{
 				d++;
 				if (s[d] >= 'a' && s[d] <= 'z')
 					s[d] -= 32;
 			}
 		}
-		else if (s[d] == ',' || s[d] == '"' || s[d] == '?' || s[d] == '\t')
-		{
-			d++;
-			if (s[d] >= 'a' && s[d] <= 'z')
-				s[d] -= 32;
-			else
-			{
-				d++;
-				if (s[d] >= 'a' && s[d] <= 'z')
-					s[d] -= 32;
-			}
-		}
-		else if (s[d] == '(' || s[d] == ')' || s[d] == '{' || s[d] == '}')
-		{
-			d++;
-			if (s[d] >= 'a' && s[d] <= 'z')
-				s[d] -= 32;
-			else
-			{
-				d++;
-				if (s[d] >= 'a' && s[d] <= 'z')
-					s[d] -= 32;
-			}
-		}
-
 	}
-
 	return (s);
 }
