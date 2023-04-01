@@ -16,8 +16,6 @@ void print_number(int n)
 		_putchar('-');
 		n = -n;
 	}
-	else if (n == 0)
-		_putchar('0');
 
 	while (n / d >= 10)
 	{
@@ -29,4 +27,6 @@ void print_number(int n)
 		_putchar(dig + '0');
 		d /= 10;
 	}
+	if (n == 0)
+		_putchar('0');
 }
