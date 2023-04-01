@@ -8,26 +8,26 @@
 
 void print_number(int n)
 {
-	unsigned int nm, nn = n;
+	unsigned int n2, n1 = n;
 	int div = 1;
 
 	if (n < 0)
 	{
 		_putchar('-');
-		nn = n * -1;
+		n1 = n * -1;
 	}
-	nm = nn
-	while (nm > 9)
+	n2 = n1;
+	while (n2 > 9)
 	{
 		div *= 10;
-		nm /= 10;
+		n2 = n2 / 10;
 	}
 	while (div >= 1)
 	{
-		nm = nn % div;
-		nn /= div;
+		n2 = n1 % div;
+		n1 /= div;
 		_putchar(n1 + '0');
-		nn = nm;
+		n1 = n2;
 		div /= 10;
 	}
 }
