@@ -9,7 +9,7 @@
 
 int _isPrintableASCII(int n)
 {
-	return(n >= 32 && n < 126)
+	return(n >= 32 && n < 126);
 }
 
 /**
@@ -26,7 +26,7 @@ void print_hexes(char *b, int start, int end)
 	for (i = 0; i < 10; i++)
 	{
 		if (i < end)
-			printf("%02x", b + start + i);
+			printf("%02x", *(b + start + i));
 		else
 			printf(" ");
 
@@ -48,7 +48,7 @@ void print_ASCII(char *b, int start, int end)
 	for (i = 0; i < end; i++)
 	{
 		cht = *(b + i + start);
-		if (!_isPrintableASCII)
+		if (!_isPrintableASCII(cht))
 			cht = 46;
 		printf("%c", cht);
 	}
