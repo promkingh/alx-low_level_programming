@@ -19,19 +19,19 @@ int _isPrintableASCII(int n)
  * @end: Ending position
  */
 
-void print_hexes(char *b, int start, int end)
+void printHexes(char *b, int start, int end)
 {
-	int i;
+	int i = 0;
 
-	for (i = 0; i < 10; i++)
+	while (i < 10)
 	{
 		if (i < end)
 			printf("%02x", *(b + start + i));
 		else
-			printf(" ");
-
+			printf("  ");
 		if (i % 2)
 			printf(" ");
+		i++;
 	}
 }
 
