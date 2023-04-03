@@ -44,14 +44,15 @@ void print_hexes(char *b, int start, int end)
 
 void print_ASCII(char *b, int start, int end)
 {
-	int i, cht;
+	int ch, i = 0;
 
-	for (i = 0; i < end; i++)
+	while (i < end)
 	{
-		cht = *(b + i + start);
-		if (!_isPrintableASCII(cht))
-			cht = 46;
-		printf("%c", cht);
+		ch = *(b + i + start);
+		if (!_isPrintableASCII(ch))
+			ch = 46;
+		printf("%c", ch);
+		i++;
 	}
 }
 
@@ -70,12 +71,11 @@ void print_buffer(char *b, int size)
 		for (start = 0; start < size; start += 10)
 		{
 			end = (size - start < 10) ? size - start : 10;
-			printf("%08x:", start);
+			printf("%08x: ", start);
 			print_hexes(b, start, end);
 			print_ASCII(b, start, end);
 			printf("\n");
 		}
-	}
-	else
+	} else
 		printf("\n");
 }
