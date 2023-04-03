@@ -19,7 +19,7 @@ int _isPrintableASCII(int n)
  * @end: Ending position
  */
 
-void print_Hexes(char *b, int start, int end)
+void print_hexes(char *b, int start, int end)
 {
 	int i = 0;
 
