@@ -64,9 +64,7 @@ void print_buffer(char *b, int size)
 {
 	int start, end;
 
-	if (size <= 0)
-		printf("\n");
-	else if (size > 0)
+	if (size > 0)
 	{
 		for(start = 0; start < size; start += 10)
 		{
@@ -77,4 +75,6 @@ void print_buffer(char *b, int size)
 			printf("\n");
 		}
 	}
+	else
+		printf("\n");
 }
