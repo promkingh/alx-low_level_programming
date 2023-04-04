@@ -23,7 +23,10 @@ char *_strstr(char *haystack, char *needle)
 			nd++;
 		}
 		if (!*nd)
+		{
 			return ((char *) haystack);
+			break;
+		}
 		haystack++;
 	}
 	return (NULL);
