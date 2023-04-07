@@ -2,7 +2,7 @@
 
 /**
  * main - Print the number of argument passed ito the function
- * @argv: Argument count
+ * @argc: Argument count
  * @argv: Array of pointers
  * Return: 0 (Sucess)
  */
