@@ -11,12 +11,13 @@
 int main(int argc, char *argv[])
 {
 	int i, prod = 1;
+	char *p;
 
 	if (argc > 1)
 	{
 		for (i = 1; i < argc; i++)
 		{
-			prod *= atoi(argv[i]);
+			prod *= strtol(argv[i],&p, 10);
 		}
 		printf("%d\n", prod);
 		return (0);
