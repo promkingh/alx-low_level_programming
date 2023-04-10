@@ -11,11 +11,11 @@
 int main(int argc, char *argv[])
 {
 	int i, e, sum = 0;
-	char *p
+	char *p;
 
 	if (argc > 1)
 	{
-		for (i = 1; i < argv[i]; i++)
+		for (i = 1; argv[i]; i++)
 		{
 			e = strtol(argv[i], &p, 10);
 			if (*p)
