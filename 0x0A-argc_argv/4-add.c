@@ -11,13 +11,14 @@
 int main(int argc, char *argv[])
 {
 	int i, e, sum = 0;
+	char *p
 
 	if (argc > 1)
 	{
-		for (i = 1; i < argc; i++)
+		for (i = 1; i < argv[i]; i++)
 		{
-			e = atoi(argv[i]);
-			if (e == 0 && argv[i][0] != '0')
+			e = strtol(argv[i], &p, 10);
+			if (*p)
 			{
 				printf("Error\n");
 				return (1);
