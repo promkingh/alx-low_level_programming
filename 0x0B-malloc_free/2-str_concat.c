@@ -12,19 +12,23 @@ char *str_concat(char *s1, char *s2)
 	char *scc;
 	int k, l, m, n, lens1, lens2, lentot;
 
-	if (s1 == NULL || s1[0] == '\0')
+	if (s1 == NULL)
 		s1 = "";
-	if (s2 == NULL || s2[0] == '\0')
+	if (s2 == NULL)
 		s2 = "";
 
 	for (k = 0; s1[k]; k++)
 		lens1++;
+	if (lens1 == 0)
+		s1 = "";
 	for (l = 0; s2[l]; l++)
 		lens2++;
+	if (lens2 == 0)
+		s2 = "";
 
 	lentot = lens1 + lens2;
 
-	scc = malloc((lentot + 1) * sizeof(char));
+	scc = malloc((lentot) * sizeof(char));
 
 	if (scc == NULL)
 		return (NULL);
