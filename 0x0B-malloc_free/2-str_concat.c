@@ -10,7 +10,7 @@
 char *str_concat(char *s1, char *s2)
 {
 	char *scc;
-	int k, l, m, n, lens1, lens2, lentot;
+	int k, l, m, n, lens1 = 0, lens2 = 0, lentot;
 
 	if (s1 == NULL)
 		s1 = "";
@@ -28,7 +28,7 @@ char *str_concat(char *s1, char *s2)
 
 	lentot = lens1 + lens2;
 
-	scc = malloc((lentot) * sizeof(char));
+	scc = malloc((lentot + 1) * sizeof(char));
 
 	if (scc == NULL)
 		return (NULL);
