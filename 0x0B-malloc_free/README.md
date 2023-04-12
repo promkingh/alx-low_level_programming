@@ -1,1 +1,1 @@
-This is a readme file for the project 0x0B-malloc_free
+This is a readme for 0x0B-malloc_free project
