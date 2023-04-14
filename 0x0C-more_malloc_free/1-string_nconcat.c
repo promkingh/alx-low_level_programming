@@ -25,12 +25,12 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	for (k = 0; s1[k]; k++)
 		lens1++;
-	for (l = 0 ; l < n; l++)
+	for (l = 0 ; s2[l] && l < n; l++)
 		lens2++;
 
 	lentot = lens1 + lens2;
 
-	scc = malloc(sizeof(char) * lentot);
+	scc = malloc(sizeof(char) * (lentot + 1));
 
 	if (scc == NULL)
 		return (NULL);
@@ -42,6 +42,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		scc[m] = s2[p];
 		m++;
 	}
+	scc[m] = '\0';
 
 	return (scc);
 }
