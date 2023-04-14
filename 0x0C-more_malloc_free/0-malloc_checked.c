@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdlib.h>
 
 /**
  * malloc_checked - aloocates memory using malloc
@@ -9,7 +8,7 @@
 
 void *malloc_checked(unsigned int b)
 {
-	int *mal;
+	void *mal;
 
 	mal = malloc(b);
 
