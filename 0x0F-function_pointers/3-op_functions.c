@@ -57,7 +57,7 @@ int op_div(int a, int b)
 
 
 /**
- * op_add -modulus of two integers
+ * op_mod -modulus of two integers
  * @a: first integer
  * @b: second integer
  *
