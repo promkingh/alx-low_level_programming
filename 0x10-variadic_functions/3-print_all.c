@@ -10,8 +10,8 @@
 void print_all(const char * const format, ...)
 {
 	va_list args;
-	const char *f = format;
 	int fg;
+	const char *f = format;
 	char *sh;
 
 	va_start(args, format);
@@ -36,8 +36,10 @@ void print_all(const char * const format, ...)
 				if (!sh)
 					printf("(nil)");
 				else
+				{
 					printf("%s", sh);
-				fg = 0;
+					fg = 0;
+				}
 				break;
 			default:
 				fg = 1;
