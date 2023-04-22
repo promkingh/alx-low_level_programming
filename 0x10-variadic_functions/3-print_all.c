@@ -35,7 +35,8 @@ void print_all(const char * const format, ...)
 				sh = va_arg(args, char *);
 				if (!sh)
 					printf("(nil)");
-				printf("%s", sh);
+				else
+					printf("%s", sh);
 				fg = 0;
 				break;
 			default:
@@ -43,7 +44,7 @@ void print_all(const char * const format, ...)
 				break;
 		}
 		if (*(f + 1) != '\0' && fg == 0)
-			printf(",");
+			printf(", ");
 		f++;
 	}
 	va_end(args);
