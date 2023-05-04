@@ -16,10 +16,10 @@ size_t print_listint_safe(const listint_t *head)
 
 	while (head)
 	{
+		n_nodes++;
 		nhead = head;
 		printf("[%p] %d\n", (void *)nhead, nhead->n);
 		head = head->next;
-		n_nodes++;
 		if (nhead <= head)
 		{
 			printf("-> [%p] %d\n", (void *)head, head->n);
