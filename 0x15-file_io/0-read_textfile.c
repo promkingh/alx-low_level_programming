@@ -11,29 +11,26 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	ssize_t num = 0;
-	FILE *fp = NULL;
-	size_t a, b;
-	char buffer[BUFF_SIZE];
+	ssize_t a;
+	ssize_t b, c;
+	char *buf;
 
+	buf = malloc(sizeof(char) * letters);
+
+	if (buf == NULL)
+		return (0);
 	if (filename == NULL)
 		return (0);
-	fp = fopen(filename, "r");
-	if (fp == NULL)
+	a = open(filename, O_RDONLY);
+	if (a == -1)
 		return (0);
-	a = 0;
-	while (fgets(buffer, BUFF_SIZE, fp) != NULL && a < letters)
-	{
-		for (b = 0; buffer[b]; b++)
-		{
-			printf("%c", buffer[b]);
-			num++;
-			if (++a >= letters)
-				break;
-		}
-	}
 
-	fclose(fp);
+	b = read(a, buf, letters);
+	c = write(STDOUT_FILENO, buf, b);
+	if (c != b  && c == -1)
+		return (0);
+	free(buf);
+	close(a);
 
-	return (num);
+	return (c);
 }
