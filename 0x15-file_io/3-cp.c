@@ -50,7 +50,7 @@ int copy_to(const char *file_from, const char *file_to)
 		}
 		rd = write(fd2, temp, rd);
 		if (rd == -1)
-		{	dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
+		{	dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_from);
 			exit(99);
 		}
 	}
