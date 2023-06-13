@@ -10,25 +10,16 @@
 
 int words_count(char *str)
 {
-	int k, l, nwrds;
+	int l, nwrds;
 
-	k = 0;
 	nwrds = 0;
 
 	for (l = 0; str[l]; l++)
 	{
-		if (str[l] == ' ')
-			k = 0;
-		else if (l == 0)
-		{
-			k = 1;
+		if (str[l] == ' ' && (str[l - 1] == ' ' || l == 0))
 			nwrds++;
-		}
 	}
-	if (nwrds == 0)
-		return (NULL);
-
-	return (nwrd);
+	return (nwrds);
 }
 
 /**
@@ -38,17 +29,17 @@ int words_count(char *str)
  */
 char **strtow(char *str)
 {
-	int arr_ind, words_ct, k, l, ct,  st, nd;
+	int arr_ind, k, l, ct,  st, nd;
 	char **new_string, *temp_string;
 
-	arr_c = 0;
+	arr_ind = 0;
 	k = 0;
 	l = 0;
 
 	while (*(str + arr_ind))
 		arr_ind++;
 
-	new_string = (char **)malloc(sizeof(char *) * (words_count(*str) + 1));
+	new_string = (char **)malloc(sizeof(char *) * (words_count(str) + 1));
 
 	if (new_string == NULL)
 		return (NULL);
@@ -65,9 +56,9 @@ char **strtow(char *str)
 				if (temp_string == NULL)
 					return (NULL);
 				while (st < nd)
-					*tem_string++ = str[st++];
+					*temp_string++ = str[st++];
 				*temp_string = '\0';
-				new_string[l] = temp - k;
+				new_string[l] = temp_string;
 				l++;
 				k = 0;
 			}
@@ -75,6 +66,6 @@ char **strtow(char *str)
 		else if (k++ == 0)
 			st = ct;
 	}
-	new_strings[l] =  NULL;
+	new_string[l] =  NULL;
 	return (new_string);
 }
