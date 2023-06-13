@@ -1,73 +1,74 @@
 #include "main.h"
 #include <stdlib.h>
-#include <string.h>
-
 /**
- * words_count - counts the number of words in a given string
- * @str: given string
- * Return: pointer to the number
+ * word_count - this function counts the number of words in a string
+ * @str: the string to be checked
+ *
+ * Return: the number of words
  */
-
-int words_count(char *str)
+int word_count(char *str)
 {
-	int l, nwrds;
+	int i, c, n;
 
-	nwrds = 0;
+	i = 0;
+	n = 0;
 
-	for (l = 0; str[l]; l++)
+	for (c = 0; str[c] != '\0'; c++)
 	{
-		if (str[l] == ' ' && (str[l - 1] == ' ' || l == 0))
-			nwrds++;
+		if (str[c] == ' ')
+			i = 0;
+		else if (i == 0)
+		{
+			i = 1;
+			n++;
+		}
 	}
-	return (nwrds);
-}
 
+	return (n);
+}
 /**
- * strtow - splits a string into words
- * @str: string to be spilt
- * Return: pointer to an array of strings
+ * **strtow - this function splits a string into words
+ * @str: the string to be split
+ *
+ * Return: pointer to the new string
  */
 char **strtow(char *str)
 {
-	int arr_ind, nwrd, k, l, ct,  st, nd;
-	char **new_string, *temp_string;
+	char **nstr, *temp;
+	int i, k, n, c, words, start, end;
 
-	arr_ind = 0;
 	k = 0;
-	l = 0;
-
-	while (*(str + arr_ind))
-		arr_ind++;
-
-	nwrd = words_count(str);
-	if (nwrd == 0)
+	n = 0;
+	c = 0;
+	while (*(str + n))
+		n++;
+	words = word_count(str);
+	if (words == 0)
 		return (NULL);
-	new_string = (char **)malloc(sizeof(char *) * (nwrd + 1));
-	if (new_string == NULL)
+	nstr = (char **) malloc(sizeof(char *) * (words + 1));
+	if (nstr == NULL)
 		return (NULL);
-
-	for (ct = 0; ct <= arr_ind; ct++)
+	for (i = 0; i <= n; i++)
 	{
-		if (str[ct] == ' ' || str[ct] == '\0')
+		if (str[i] == ' ' || str[i] == '\0')
 		{
-			if (k)
+			if (c)
 			{
-				nd = ct;
-				temp_string = (char *)malloc(sizeof(char) * (k + 1));
-
-				if (temp_string == NULL)
+				end = i;
+				temp = (char *) malloc(sizeof(char) * (c + 1));
+				if (temp == NULL)
 					return (NULL);
-				while (st < nd)
-					*temp_string++ = str[st++];
-				*temp_string = '\0';
-				new_string[l] = temp_string - k;
-				l++;
-				k = 0;
+				while (start < end)
+					*temp++ = str[start++];
+				*temp = '\0';
+				nstr[k] = temp - c;
+				k++;
+				c = 0;
 			}
 		}
-		else if (k++ == 0)
-			st = ct;
+		else if (c++ == 0)
+			start = i;
 	}
-	new_string[l] =  NULL;
-	return (new_string);
+	nstr[k] = NULL;
+	return (nstr);
 }
