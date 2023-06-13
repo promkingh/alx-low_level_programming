@@ -29,7 +29,7 @@ int words_count(char *str)
  */
 char **strtow(char *str)
 {
-	int arr_ind, k, l, ct,  st, nd;
+	int arr_ind, nwrd, k, l, ct,  st, nd;
 	char **new_string, *temp_string;
 
 	arr_ind = 0;
@@ -39,12 +39,14 @@ char **strtow(char *str)
 	while (*(str + arr_ind))
 		arr_ind++;
 
-	new_string = (char **)malloc(sizeof(char *) * (words_count(str) + 1));
-
+	nwrd = words_count(str);
+	if (nwrd == 0)
+		return (NULL);
+	new_string = (char **)malloc(sizeof(char *) * (nwrd + 1));
 	if (new_string == NULL)
 		return (NULL);
 
-	for (ct = 0; ct < arr_ind; ct++)
+	for (ct = 0; ct <= arr_ind; ct++)
 	{
 		if (str[ct] == ' ' || str[ct] == '\0')
 		{
@@ -58,7 +60,7 @@ char **strtow(char *str)
 				while (st < nd)
 					*temp_string++ = str[st++];
 				*temp_string = '\0';
-				new_string[l] = temp_string;
+				new_string[l] = temp_string - k;
 				l++;
 				k = 0;
 			}
